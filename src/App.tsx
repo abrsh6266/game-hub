@@ -1,17 +1,8 @@
-import { useEffect, useRef } from "react";
-
-function App() {
-  const ref = useRef<HTMLInputElement>(null)
-
-  useEffect(()=>{
-    if(ref.current) ref.current.focus()
-  })
-useEffect(()=>{
-  document.title= 'abxo9'
-})
+import { Button } from "@chakra-ui/react";
+function App(){
   return (
     <div>
-      <input ref={ref} type="text" className="form-control m-5" />
+      <Button colorScheme='blue'>Button</Button>
     </div>
   );
 }
