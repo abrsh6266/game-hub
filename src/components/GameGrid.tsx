@@ -7,6 +7,7 @@ import { Genre } from "../hooks/useGenres";
 
 interface Props{
   selectedGenre: Genre| null
+  
 }
 
 function GameGrid({selectedGenre}: Props) {
