@@ -16,16 +16,14 @@ const useData = <T>(endpoint: string) => {
             .get<FetchResponse<T>>(endpoint, { signal: controller.signal })
             .then((res) => {
                 setData(res.data.results)
+                setLoading(false)
             })
             .catch((err) => {
                 if (err instanceof CanceledError) return
                 setError(err.message)
                 setLoading(false)
             });
-        if (data.length !== 0) {
-            setLoading(false)
-        }
-    });
+    },[]);
     return { data, error, isLoading }
 
 }
